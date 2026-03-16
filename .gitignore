@@ -13,6 +13,13 @@ target/
 .springBeans
 .sts4-cache
 
+# Banco H2
+*.mv.db
+*.trace.db
+
+# Maven
+target/
+
 ### IntelliJ IDEA ###
 .idea
 *.iws

@@ -1,7 +1,7 @@
-package com.biopark.alunos.service;
+package api.aula04.service;
 
-import com.biopark.alunos.model.Aluno;
-import com.biopark.alunos.repository.AlunoRepository;
+import api.aula04.model.Aluno;
+import api.aula04.repository.AlunoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,19 +16,8 @@ public class AlunoService {
         this.repository = repository;
     }
 
-    public List<Aluno> listarTodos() {
-        return repository.findAll();
-    }
-
-    public Optional<Aluno> buscarPorId(Long id) {
-        return repository.findById(id);
-    }
-
-    public void salvar(Aluno aluno) {
-        repository.save(aluno);
-    }
-
-    public void excluir(Long id) {
-        repository.deleteById(id);
-    }
+    public List<Aluno> listarTodos() { return repository.findAll(); }
+    public Optional<Aluno> buscarPorId(Long id) { return repository.findById(id); }
+    public void salvar(Aluno aluno) { repository.save(aluno); }
+    public void excluir(Long id) { repository.deleteById(id); }
 }

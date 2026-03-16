@@ -1,4 +1,4 @@
-package com.biopark.alunos.model;
+package api.aula04.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -18,35 +18,13 @@ public class Aluno {
 
     private String curso;
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public String getNome() { return nome; }
+    public String getEmail() { return email; }
+    public String getCurso() { return curso; }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getCurso() {
-        return curso;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setCurso(String curso) {
-        this.curso = curso;
-    }
+    public void setId(Long id) { this.id = id; }
+    public void setNome(String nome) { this.nome = nome; }
+    public void setEmail(String email) { this.email = email; }
+    public void setCurso(String curso) { this.curso = curso; }
 }

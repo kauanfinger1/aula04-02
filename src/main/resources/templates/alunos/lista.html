@@ -2,17 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Alunos</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
-<h1>Lista de Alunos</h1>
+<div class="container">
+    <h1>Lista de Alunos</h1>
 
-<a th:href="@{/alunos/novo}">Novo Aluno</a>
+    <p th:if="${mensagem}" th:text="${mensagem}" class="mensagem-sucesso"></p>
+    <p th:if="${erro}" th:text="${erro}" class="mensagem-erro"></p>
 
-<br><br>
+    <a th:href="@{/alunos/novo}" class="btn-novo">+ Novo Aluno</a>
 
-<table border="1">
-    <thead>
+    <table>
+        <thead>
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -20,34 +23,24 @@
             <th>Curso</th>
             <th>Ações</th>
         </tr>
-    </thead>
-
-    <tbody>
+        </thead>
+        <tbody>
         <tr th:each="aluno : ${alunos}">
             <td th:text="${aluno.id}"></td>
             <td th:text="${aluno.nome}"></td>
             <td th:text="${aluno.email}"></td>
             <td th:text="${aluno.curso}"></td>
-
             <td>
-
-                <a th:href="@{/alunos/editar/{id}(id=${aluno.id})}">
-                    Editar
-                </a>
-
+                <a th:href="@{/alunos/editar/{id}(id=${aluno.id})}" class="btn-editar">Editar</a>
                 <form th:action="@{/alunos/excluir/{id}(id=${aluno.id})}"
-                      method="post"
-                      style="display:inline">
-
-                    <button type="submit">Excluir</button>
-
+                      method="post" style="display:inline">
+                    <button type="submit" class="btn-excluir">Excluir</button>
                 </form>
-
             </td>
         </tr>
-    </tbody>
-
-</table>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>
