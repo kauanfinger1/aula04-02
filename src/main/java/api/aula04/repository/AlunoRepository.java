@@ -1,9 +1,7 @@
-package api.aula04.repository;
+package com.biopark.alunos.repository;
 
-import api.aula04.model.AlunoModel;
+import com.biopark.alunos.model.Aluno;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface AlunoRepository extends JpaRepository<AlunoModel, Long> {
+public interface AlunoRepository extends JpaRepository<Aluno, Long> {
 }
